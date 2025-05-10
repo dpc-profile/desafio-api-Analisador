@@ -1,0 +1,7 @@
+﻿services:
+  analisadordadosapi:
+    image: analisadordadosapi
+    build:
+      context: .
+      dockerfile: AnalisadorDadosAPI/Dockerfile
+

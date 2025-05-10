@@ -1,0 +1,91 @@
+#@api_uri = http://localhost:5170
+@api_uri = https://localhost:7227
+
+POST {{api_uri}}/user
+Content-Type: application/json
+
+[
+ {
+    "id": "ee8f2662-c8b5-4189-9b66-d6af64fe02be",
+    "name": "Ana Sophia Araújo",
+    "age": 19,
+    "score": 859,
+    "active": true,
+    "country": "Índia",
+    "team": {
+      "name": "Frontend Avengers",
+      "leader": false,
+      "projects": [
+        {
+          "name": "Mobile App",
+          "completed": false
+        }
+      ]
+    },
+    "logs": [
+      {
+        "date": "2025-03-25",
+        "action": "logout"
+      },
+      {
+        "date": "2025-03-26",
+        "action": "login"
+      },
+      {
+        "date": "2025-03-29",
+        "action": "logout"
+      },
+      {
+        "date": "2025-03-26",
+        "action": "login"
+      }
+    ]
+  },
+  {
+    "id": "1e46c60d-96a4-4bc6-a792-923a0078f3f9",
+    "name": "Sra. Elisa das Neves",
+    "age": 44,
+    "score": 325,
+    "active": true,
+    "country": "Japão",
+    "team": {
+      "name": "UX Wizards",
+      "leader": false,
+      "projects": [
+        {
+          "name": "Dashboard",
+          "completed": true
+        }
+      ]
+    },
+    "logs": [
+      {
+        "date": "2025-03-27",
+        "action": "logout"
+      },
+      {
+        "date": "2025-03-31",
+        "action": "login"
+      },
+      {
+        "date": "2025-03-25",
+        "action": "login"
+      }
+    ]
+  }
+]
+###
+GET {{api_uri}}/superusers
+Accept: application/json
+
+###
+GET {{api_uri}}/top-countries
+Accept: application/json
+###
+
+GET {{api_uri}}/active-users-per-day
+Accept: application/json
+###
+GET {{api_uri}}/active-users-per-day?min=34780
+Accept: application/json
+### 
