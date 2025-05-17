@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AnalisadorDados.API.Controllers
@@ -18,6 +17,10 @@ namespace AnalisadorDados.API.Controllers
         [Route("/superusers")]
         public async Task<IActionResult> SuperUsuarios()
         {
+            // Filtro: score >= 900 e active = true
+            // Retorna os dados e o tempo de processamento da requisição em ms.
+            // Retornar timestamp da requisição
+            
             return Ok("Esse aqui tá ok");
         }
         
@@ -25,6 +28,21 @@ namespace AnalisadorDados.API.Controllers
         [Route("/top-countries")]
         public async Task<IActionResult> TopPaises()
         {
+            // Agrupa os superusuários por país.
+            // Retorna os 5 países com maior número de superusuários.
+            // Retornar tempo de processamento da requisição em ms e timestamp da requisição
+            
+            return Ok("Esse aqui tá ok");
+        }
+        
+        [HttpGet]
+        [Route("/team-insights")]
+        public async Task<IActionResult> InformacoesTimes()
+        {
+            // Agrupa por team.name.
+            // Retorna: total de membros, líderes, projetos concluídos e % de membros ativos.
+            // Retornar tempo de processamento da requisição em ms e timestamp da requisição
+            
             return Ok("Esse aqui tá ok");
         }
         
@@ -32,6 +50,10 @@ namespace AnalisadorDados.API.Controllers
         [Route("/active-users-per-day")]
         public async Task<IActionResult> UsuariosAtivosPorDia([FromQuery] int? min)
         {
+            // Conta quantos logins aconteceram por data.
+            // Query param opcional: ?min=3000 para filtrar dias com pelo menos 3.000 logins.
+            // Retornar tempo de processamento da requisição em ms e timestamp da requisição
+            
             return Ok("Esse aqui tá ok");
         }
     }

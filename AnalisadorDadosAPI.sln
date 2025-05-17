@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalisadorDados.Core", "AnalisadorDados.Core\AnalisadorDados.Core.csproj", "{32D3AB5A-A319-4A5E-9C14-B5CA238481A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalisadorDados.Repository", "AnalisadorDados.Repository\AnalisadorDados.Repository.csproj", "{168E420B-AA21-4630-BDBC-50C43191901F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,5 +25,9 @@ Global
 		{32D3AB5A-A319-4A5E-9C14-B5CA238481A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32D3AB5A-A319-4A5E-9C14-B5CA238481A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32D3AB5A-A319-4A5E-9C14-B5CA238481A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{168E420B-AA21-4630-BDBC-50C43191901F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168E420B-AA21-4630-BDBC-50C43191901F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168E420B-AA21-4630-BDBC-50C43191901F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168E420B-AA21-4630-BDBC-50C43191901F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

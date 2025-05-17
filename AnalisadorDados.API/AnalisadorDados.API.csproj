@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.15" />
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
     </ItemGroup>
@@ -20,6 +21,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\AnalisadorDados.Core\AnalisadorDados.Core.csproj" />
+      <ProjectReference Include="..\AnalisadorDados.Repository\AnalisadorDados.Repository.csproj" />
     </ItemGroup>
 
 </Project>
