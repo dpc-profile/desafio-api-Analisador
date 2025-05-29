@@ -1,14 +1,12 @@
-namespace AnalisadorDados.Repository.Entities;
+namespace AnalisadorDados.Core.Entities;
 
 public class LOG
 {
-    [Key]
-    [Column("id")]
     public int Id { get; set; }
     
-    [Column("date")]
     public DateOnly Date {get; set;}
     
-    [Column("action")]
-    public required Action Action {get; set;}
+    public bool Action {get; set;} 
+    
+    
 }

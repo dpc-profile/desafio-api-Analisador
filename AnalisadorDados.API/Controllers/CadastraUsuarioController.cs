@@ -1,9 +1,7 @@
 using AnalisadorDados.API.Dto;
-using AnalisadorDados.Repository.Entities;
+using AnalisadorDados.Core.Entities;
 
 using Microsoft.AspNetCore.Mvc;
-
-using Action = AnalisadorDados.API.Dto.Action;
 
 namespace AnalisadorDados.API.Controllers;
 
@@ -38,7 +36,7 @@ public class CadastraUsuarioController : ControllerBase
                 {
                     Name = usuarioCriacao.Team.Name,
                     Leader = usuarioCriacao.Team.Leader,
-                    Projects = usuarioCriacao.Team.Projects.Select(x => x.Name).ToList()
+                    // Projects = usuarioCriacao.Team.Projects.Select(x => x.Name).ToList()
                 } 
             };
             

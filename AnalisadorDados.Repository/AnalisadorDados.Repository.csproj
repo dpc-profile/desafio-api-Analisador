@@ -9,6 +9,8 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.15" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.15" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.15" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -19,10 +21,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\AnalisadorDados.Core\AnalisadorDados.Core.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Entities\" />
     </ItemGroup>
 
 </Project>

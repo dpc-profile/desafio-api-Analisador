@@ -1,4 +1,6 @@
 using System.Text.Json.Serialization;
+using Action = AnalisadorDados.Core.Enum.Action;
+
 
 namespace AnalisadorDados.API.Dto;
 
@@ -23,11 +25,11 @@ public class Log
     }
 
     [JsonPropertyName("date")]
-    public string Date { get; }
+    public string Date { get; private set; }
 
     [JsonPropertyName("action")]
     [JsonConverter(typeof(JsonStringEnumConverter<Action>))]
-    public Action Action { get;}
+    public Action Action { get; private set; }
 
 }
 
@@ -42,9 +44,3 @@ public record Team(
     [property: JsonPropertyName("projects")] IEnumerable<Project> Projects
 );
 
-public enum Action
-{
-    Invalid = 0,
-    Login = 1,
-    Logout = 2,
-}
