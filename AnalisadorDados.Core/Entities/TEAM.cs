@@ -1,3 +1,5 @@
+using AnalisadorDados.Core.Entities;
+
 namespace AnalisadorDados.Repository.Entities;
 
 public class TEAM

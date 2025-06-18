@@ -1,5 +1,5 @@
 
-namespace AnalisadorDados.Repository.Entities;
+namespace AnalisadorDados.Core.Entities;
 
 public class PROJECT
 {

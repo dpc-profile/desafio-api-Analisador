@@ -38,7 +38,7 @@ public class CadastraUsuarioController : ControllerBase
                 {
                     Name = usuarioCriacao.Team.Name,
                     Leader = usuarioCriacao.Team.Leader,
-                    Projects = usuarioCriacao.Team.Projects.Select(x => x.Name).ToList()
+                    // Projects = usuarioCriacao.Team.Projects.Select(x => x.Name).ToList()
                 } 
             };
             
