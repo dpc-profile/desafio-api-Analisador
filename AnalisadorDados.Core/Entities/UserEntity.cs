@@ -1,6 +1,7 @@
 namespace AnalisadorDados.Core.Entities;
 
-public class USER
+[Table("USER")]
+public class UserEntity
 {
     [Key]
     [Column("id")]
@@ -23,8 +24,9 @@ public class USER
     public string Country {get; set;}
     
     [Column("team")]    
-    public TEAM Team {get; set;}
+    public TeamEntity TeamEntity {get; set;}
 
-    [Column("logs")] public ICollection<LOG> Logs { get; set; } = new List<LOG>();
+    [Column("logs")] 
+    public ICollection<LogEntity> Logs { get; set; } = new List<LogEntity>();
 
 }

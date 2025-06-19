@@ -11,9 +11,9 @@ public class ProjectDto
         Completed = completed;
     }
     
-    public static IEnumerable<PROJECT> ToEntity(IEnumerable<ProjectDto> dtos)
+    public static IEnumerable<ProjectEntity> ToEntity(IEnumerable<ProjectDto> dtos)
     {
-        return dtos.Select(dto => new PROJECT
+        return dtos.Select(dto => new ProjectEntity
         {
             Name = dto.Name,
             Completed = dto.Completed

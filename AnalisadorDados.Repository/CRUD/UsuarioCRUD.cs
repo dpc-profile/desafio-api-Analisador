@@ -12,9 +12,9 @@ public class UsuarioCRUD : IUsuarioCRUD
     }
 
 
-    public async Task<int> GravarUsuario(USER user)
+    public async Task<int> GravarUsuario(UserEntity userEntity)
     {
-        _context.Add(user);
+        _context.Add(userEntity);
         await _context.SaveChangesAsync();
         
         return 1;

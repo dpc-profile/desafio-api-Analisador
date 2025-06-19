@@ -11,9 +11,9 @@ public class LogDto
         this.EnumAction = enumAction;
     }
     
-    public static IEnumerable<LOG> ToEntity(IEnumerable<LogDto> dtos)
+    public static IEnumerable<LogEntity> ToEntity(IEnumerable<LogDto> dtos)
     {
-        return dtos.Select(dto => new LOG
+        return dtos.Select(dto => new LogEntity
         {
             Date = DateOnly.Parse(dto.Date),
             Action = dto.EnumAction

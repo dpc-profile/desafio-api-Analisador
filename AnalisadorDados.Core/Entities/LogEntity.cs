@@ -2,7 +2,8 @@ using AnalisadorDados.Core.Dto;
 
 namespace AnalisadorDados.Core.Entities;
 
-public class LOG
+[Table("LOG")]
+public class LogEntity
 {
     [Key]
     [Column("id")]

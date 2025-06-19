@@ -5,9 +5,9 @@ namespace AnalisadorDados.API.Dto;
 
 public class UsuarioCriacaoDto
 {
-    // TODO: Talvez implementar factory para esse contrutor
     [JsonConstructor]
-    public UsuarioCriacaoDto(string id, string name, int age, int score, bool active, string country, TeamDto teamDto, IEnumerable<LogDto> logs)
+    public UsuarioCriacaoDto(string id, string name, int age, int score, bool active, string country, 
+        TeamDto teamDto, IEnumerable<LogDto> logs)
     {
         Id = id;
         Name = name;
@@ -19,9 +19,9 @@ public class UsuarioCriacaoDto
         Logs = logs;
     }
     
-    public static USER ToEntity(UsuarioCriacaoDto dto)
+    public static UserEntity ToEntity(UsuarioCriacaoDto dto)
     {
-        return new USER
+        return new UserEntity
         {
             Id = dto.Id,
             Name = dto.Name,
@@ -29,7 +29,7 @@ public class UsuarioCriacaoDto
             Score = dto.Score,
             Active = dto.Active,
             Country = dto.Country,
-            Team = TeamDto.ToEntity(dto.TeamDto),
+            TeamEntity = TeamDto.ToEntity(dto.TeamDto),
             Logs = LogDto.ToEntity(dto.Logs).ToList()
         };
     }

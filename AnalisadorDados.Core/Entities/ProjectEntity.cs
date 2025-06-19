@@ -1,7 +1,8 @@
 
 namespace AnalisadorDados.Core.Entities;
 
-public class PROJECT
+[Table("PROJECT")]
+public class ProjectEntity
 {
     [Key]
     [Column("id")]

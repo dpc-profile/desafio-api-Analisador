@@ -1,5 +1,4 @@
 using AnalisadorDados.API.Dto;
-using AnalisadorDados.Core.Entities;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,12 +9,12 @@ namespace AnalisadorDados.API.Controllers;
 public class CadastraUsuarioController : ControllerBase
 {
     private readonly ILogger<CadastraUsuarioController> _logger;
-    private readonly IUsuarioCRUD _usuarioCRUD;
+    private readonly IUsuarioCRUD _usuarioCrud;
 
     public CadastraUsuarioController(ILogger<CadastraUsuarioController> logger, IUsuarioCRUD usuarioCrud)
     {
         _logger = logger;
-        _usuarioCRUD = usuarioCrud;
+        _usuarioCrud = usuarioCrud;
     }
 
     [HttpPost]
@@ -26,7 +25,7 @@ public class CadastraUsuarioController : ControllerBase
         {
             var usuario = UsuarioCriacaoDto.ToEntity(usuarioCriacao);
             
-            await _usuarioCRUD.GravarUsuario(usuario);
+            await _usuarioCrud.GravarUsuario(usuario);
         }
         
         var retorn = new UsuarioCriacaoRetorno("Arquivo recebido com sucesso.", listaUsuario.Count);

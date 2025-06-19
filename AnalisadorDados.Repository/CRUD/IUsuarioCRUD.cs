@@ -4,5 +4,5 @@ namespace AnalisadorDados.Repository.CRUD;
 
 public interface IUsuarioCRUD
 {
-    public Task<int> GravarUsuario(USER user);
+    public Task<int> GravarUsuario(UserEntity userEntity);
 }

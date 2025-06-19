@@ -12,9 +12,9 @@ public class TeamDto
         Projects = projects;
     }
     
-    public static TEAM ToEntity(TeamDto dto)
+    public static TeamEntity ToEntity(TeamDto dto)
     {
-        return new TEAM
+        return new TeamEntity
         {
             Name = dto.Name,
             Leader = dto.Leader,
