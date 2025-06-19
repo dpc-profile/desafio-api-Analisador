@@ -1,9 +1,8 @@
 using AnalisadorDados.API.Dto;
+using AnalisadorDados.Core.Entities;
 using AnalisadorDados.Repository.Entities;
 
 using Microsoft.AspNetCore.Mvc;
-
-using Action = AnalisadorDados.API.Dto.Action;
 
 namespace AnalisadorDados.API.Controllers;
 
@@ -36,8 +35,8 @@ public class CadastraUsuarioController : ControllerBase
                 Country = usuarioCriacao.Country,
                 Team = new TEAM()
                 {
-                    Name = usuarioCriacao.Team.Name,
-                    Leader = usuarioCriacao.Team.Leader,
+                    Name = usuarioCriacao.TeamDto.Name,
+                    Leader = usuarioCriacao.TeamDto.Leader,
                     // Projects = usuarioCriacao.Team.Projects.Select(x => x.Name).ToList()
                 } 
             };

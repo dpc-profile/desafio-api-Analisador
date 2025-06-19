@@ -15,6 +15,6 @@ public class TEAM
     public bool Leader {get; set;}
     
     [Column("projects")]
-    public List<PROJECT> Projects {get; set;}
+    public IEnumerable<PROJECT> Projects {get; set;}
     
 }

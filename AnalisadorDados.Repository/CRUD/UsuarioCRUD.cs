@@ -1,3 +1,5 @@
+using AnalisadorDados.Core.Entities;
+
 namespace AnalisadorDados.Repository.CRUD;
 
 public class UsuarioCRUD : IUsuarioCRUD

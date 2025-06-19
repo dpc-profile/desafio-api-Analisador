@@ -1,4 +1,6 @@
-namespace AnalisadorDados.Repository.Entities;
+using AnalisadorDados.Repository.Entities;
+
+namespace AnalisadorDados.Core.Entities;
 
 public class USER
 {

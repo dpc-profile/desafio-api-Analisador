@@ -1,50 +1,55 @@
-using System.Text.Json.Serialization;
+using AnalisadorDados.Core.Dto;
+using AnalisadorDados.Core.Entities;
+using AnalisadorDados.Repository.Entities;
 
 namespace AnalisadorDados.API.Dto;
 
-public record UsuarioCriacaoDto(
-     [property: JsonPropertyName("id")] string Id,
-     [property: JsonPropertyName("name")] string Name,
-     [property: JsonPropertyName("age")] int Age,
-     [property: JsonPropertyName("score")] int Score,
-     [property: JsonPropertyName("active")] bool Active,
-     [property: JsonPropertyName("country")] string Country,
-     [property: JsonPropertyName("team")] Team Team,
-     [property: JsonPropertyName("logs")] IEnumerable<Log> Logs
-);
-
-public class Log
+public class UsuarioCriacaoDto
 {
+    // TODO: Talvez implementar factory para esse contrutor
     [JsonConstructor]
-    public Log(string date, Action action)
+    public UsuarioCriacaoDto(string id, string name, int age, int score, bool active, string country, TeamDto teamDto, IEnumerable<LogDto> logs)
     {
-        this.Date = date;
-        this.Action = action;
+        Id = id;
+        Name = name;
+        Age = age;
+        Score = score;
+        Active = active;
+        Country = country;
+        TeamDto = teamDto;
+        Logs = logs;
+    }
+    
+    public static USER ToEntity(UsuarioCriacaoDto dto)
+    {
+        return new USER
+        {
+            Id = dto.Id,
+            Name = dto.Name,
+            Age = dto.Age,
+            Score = dto.Score,
+            Active = dto.Active,
+            Country = dto.Country,
+            Team = TeamDto.ToEntity(dto.TeamDto),
+            Logs = LogDto.ToEntity(dto.Logs)
+        };
     }
 
-    [JsonPropertyName("date")]
-    public string Date { get; }
+    [JsonPropertyName("id")] public string Id { get; }
 
-    [JsonPropertyName("action")]
-    [JsonConverter(typeof(JsonStringEnumConverter<Action>))]
-    public Action Action { get;}
+    [JsonPropertyName("name")] public string Name { get; }
 
-}
+    [JsonPropertyName("age")] public int Age { get; }
 
-public record Project(
-    [property: JsonPropertyName("name")] string Name,
-    [property: JsonPropertyName("completed")] bool Completed
-);
+    [JsonPropertyName("score")] public int Score { get; }
 
-public record Team(
-    [property: JsonPropertyName("name")] string Name,
-    [property: JsonPropertyName("leader")] bool Leader,
-    [property: JsonPropertyName("projects")] IEnumerable<Project> Projects
-);
+    [JsonPropertyName("active")] public bool Active { get; }
 
-public enum Action
-{
-    Invalid = 0,
-    Login = 1,
-    Logout = 2,
+    [JsonPropertyName("country")] public string Country { get; }
+
+    [JsonPropertyName("team")] public TeamDto TeamDto { get; }
+
+    [JsonPropertyName("logs")] public IEnumerable<LogDto> Logs { get; }
+    
+
 }

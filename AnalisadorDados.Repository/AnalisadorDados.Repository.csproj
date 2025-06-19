@@ -22,8 +22,4 @@
       <ProjectReference Include="..\AnalisadorDados.Core\AnalisadorDados.Core.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Entities\" />
-    </ItemGroup>
-
 </Project>

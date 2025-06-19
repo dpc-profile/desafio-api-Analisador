@@ -1,4 +1,6 @@
-namespace AnalisadorDados.Repository.Entities;
+using AnalisadorDados.Core.Dto;
+
+namespace AnalisadorDados.Core.Entities;
 
 public class LOG
 {
@@ -10,5 +12,5 @@ public class LOG
     public DateOnly Date {get; set;}
     
     [Column("action")]
-    public required Action Action {get; set;}
+    public EnumAction Action {get; set;}
 }
