@@ -1,6 +1,4 @@
-using AnalisadorDados.Core.Entities;
-
-namespace AnalisadorDados.Repository.Entities;
+namespace AnalisadorDados.Core.Entities;
 
 public class TEAM
 {
@@ -15,6 +13,6 @@ public class TEAM
     public bool Leader {get; set;}
     
     [Column("projects")]
-    public IEnumerable<PROJECT> Projects {get; set;}
+    public ICollection<PROJECT> Projects {get; set;} = new List<PROJECT>();
     
 }

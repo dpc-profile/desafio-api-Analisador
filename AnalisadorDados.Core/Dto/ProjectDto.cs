@@ -17,7 +17,7 @@ public class ProjectDto
         {
             Name = dto.Name,
             Completed = dto.Completed
-        });
+        }).ToList();
     }
     
     [JsonPropertyName("name")] public string Name { get; }

@@ -1,6 +1,5 @@
 using AnalisadorDados.Core.Dto;
 using AnalisadorDados.Core.Entities;
-using AnalisadorDados.Repository.Entities;
 
 namespace AnalisadorDados.API.Dto;
 
@@ -31,7 +30,7 @@ public class UsuarioCriacaoDto
             Active = dto.Active,
             Country = dto.Country,
             Team = TeamDto.ToEntity(dto.TeamDto),
-            Logs = LogDto.ToEntity(dto.Logs)
+            Logs = LogDto.ToEntity(dto.Logs).ToList()
         };
     }
 
@@ -50,6 +49,4 @@ public class UsuarioCriacaoDto
     [JsonPropertyName("team")] public TeamDto TeamDto { get; }
 
     [JsonPropertyName("logs")] public IEnumerable<LogDto> Logs { get; }
-    
-
 }

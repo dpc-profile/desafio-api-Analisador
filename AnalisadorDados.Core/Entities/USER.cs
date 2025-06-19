@@ -1,5 +1,3 @@
-using AnalisadorDados.Repository.Entities;
-
 namespace AnalisadorDados.Core.Entities;
 
 public class USER
@@ -26,8 +24,7 @@ public class USER
     
     [Column("team")]    
     public TEAM Team {get; set;}
-    
-    [Column("logs")]    
-    public IEnumerable<LOG> Logs {get; set;}
-    
+
+    [Column("logs")] public ICollection<LOG> Logs { get; set; } = new List<LOG>();
+
 }

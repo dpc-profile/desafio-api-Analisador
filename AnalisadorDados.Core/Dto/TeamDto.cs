@@ -1,4 +1,4 @@
-using AnalisadorDados.Repository.Entities;
+using AnalisadorDados.Core.Entities;
 
 namespace AnalisadorDados.Core.Dto;
 
@@ -18,7 +18,7 @@ public class TeamDto
         {
             Name = dto.Name,
             Leader = dto.Leader,
-            Projects = ProjectDto.ToEntity(dto.Projects)
+            Projects = ProjectDto.ToEntity(dto.Projects).ToList(),
         };
     }
     

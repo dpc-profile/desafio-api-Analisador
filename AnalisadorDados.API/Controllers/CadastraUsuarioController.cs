@@ -1,6 +1,5 @@
 using AnalisadorDados.API.Dto;
 using AnalisadorDados.Core.Entities;
-using AnalisadorDados.Repository.Entities;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,21 +24,7 @@ public class CadastraUsuarioController : ControllerBase
     {
         foreach (var usuarioCriacao in listaUsuario)
         {
-            USER usuario = new()
-            {
-                Id = usuarioCriacao.Id,
-                Name = usuarioCriacao.Name,
-                Age = usuarioCriacao.Age,
-                Score = usuarioCriacao.Score,
-                Active = usuarioCriacao.Active,
-                Country = usuarioCriacao.Country,
-                Team = new TEAM()
-                {
-                    Name = usuarioCriacao.TeamDto.Name,
-                    Leader = usuarioCriacao.TeamDto.Leader,
-                    // Projects = usuarioCriacao.Team.Projects.Select(x => x.Name).ToList()
-                } 
-            };
+            var usuario = UsuarioCriacaoDto.ToEntity(usuarioCriacao);
             
             await _usuarioCRUD.GravarUsuario(usuario);
         }

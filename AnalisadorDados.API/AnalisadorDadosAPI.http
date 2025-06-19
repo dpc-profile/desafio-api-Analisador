@@ -25,7 +25,7 @@ Content-Type: application/json
     "logs": [
       {
         "date": "2025-03-25",
-        "action": "logouut"
+        "action": "logout"
       },
       {
         "date": "2025-03-26",
