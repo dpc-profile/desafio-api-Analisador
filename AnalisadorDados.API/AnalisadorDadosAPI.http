@@ -45,7 +45,7 @@ Content-Type: application/json
     "id": "1e46c60d-96a4-4bc6-a792-923a0078f3f9",
     "name": "Sra. Elisa das Neves",
     "age": 44,
-    "score": 325,
+    "score": 925,
     "active": true,
     "country": "Japão",
     "team": {

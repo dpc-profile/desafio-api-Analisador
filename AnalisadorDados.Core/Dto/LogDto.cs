@@ -19,6 +19,14 @@ public class LogDto
             Action = dto.EnumAction
         });
     }
+    
+    public static IEnumerable<LogDto> ToDto(IEnumerable<LogEntity> entities)
+    {
+        return entities.Select(entity => new LogDto(
+            entity.Date.ToString("yyyy-MM-dd"),
+            entity.Action
+        ));
+    }
 
     [JsonPropertyName("date")] public string Date { get; }
 

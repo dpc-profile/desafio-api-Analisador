@@ -22,6 +22,15 @@ public class TeamDto
         };
     }
     
+    public static TeamDto ToDto(TeamEntity entity)
+    {
+        return new TeamDto(
+            entity.Name,
+            entity.Leader,
+            ProjectDto.ToDto(entity.Projects)
+        );
+    }
+    
     [JsonPropertyName("name")] public string Name { get; }
     [JsonPropertyName("leader")] public bool Leader { get; }
     [JsonPropertyName("projects")] public IEnumerable<ProjectDto> Projects { get; }

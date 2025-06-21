@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalisadorDados.Core", "Ana
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalisadorDados.Repository", "AnalisadorDados.Repository\AnalisadorDados.Repository.csproj", "{168E420B-AA21-4630-BDBC-50C43191901F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalisadorDados.Application", "AnalisadorDados.Application\AnalisadorDados.Application.csproj", "{7F8426E5-F5E9-42E3-865F-6DDDD6F93FB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,5 +31,9 @@ Global
 		{168E420B-AA21-4630-BDBC-50C43191901F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{168E420B-AA21-4630-BDBC-50C43191901F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{168E420B-AA21-4630-BDBC-50C43191901F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F8426E5-F5E9-42E3-865F-6DDDD6F93FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F8426E5-F5E9-42E3-865F-6DDDD6F93FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F8426E5-F5E9-42E3-865F-6DDDD6F93FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F8426E5-F5E9-42E3-865F-6DDDD6F93FB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

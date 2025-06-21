@@ -1,4 +1,4 @@
-using AnalisadorDados.API.Dto;
+using AnalisadorDados.Application.Dto;
 
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,7 +1,9 @@
+using System.Text.Json.Serialization;
+
 using AnalisadorDados.Core.Dto;
 using AnalisadorDados.Core.Entities;
 
-namespace AnalisadorDados.API.Dto;
+namespace AnalisadorDados.Application.Dto;
 
 public class UsuarioCriacaoDto
 {
@@ -29,9 +31,24 @@ public class UsuarioCriacaoDto
             Score = dto.Score,
             Active = dto.Active,
             Country = dto.Country,
-            TeamEntity = TeamDto.ToEntity(dto.TeamDto),
+            Team = TeamDto.ToEntity(dto.TeamDto),
             Logs = LogDto.ToEntity(dto.Logs).ToList()
         };
+    }
+    
+    public static IEnumerable<UsuarioCriacaoDto> ToDto(IEnumerable<UserEntity> entidades)
+    {
+        return entidades.Select(u => new UsuarioCriacaoDto(
+            u.Id,
+            u.Name,
+            u.Age,
+            u.Score,
+            u.Active,
+            u.Country,
+            TeamDto.ToDto(u.Team),
+            LogDto.ToDto(u.Logs))
+        );
+        
     }
 
     [JsonPropertyName("id")] public string Id { get; }

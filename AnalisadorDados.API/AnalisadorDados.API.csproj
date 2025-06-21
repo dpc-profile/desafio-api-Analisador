@@ -20,8 +20,13 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AnalisadorDados.Application\AnalisadorDados.Application.csproj" />
       <ProjectReference Include="..\AnalisadorDados.Core\AnalisadorDados.Core.csproj" />
       <ProjectReference Include="..\AnalisadorDados.Repository\AnalisadorDados.Repository.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Dto\" />
     </ItemGroup>
 
 </Project>

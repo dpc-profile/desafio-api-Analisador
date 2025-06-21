@@ -1,3 +1,6 @@
+using AnalisadorDados.Application.Dto;
+using AnalisadorDados.Core.Dto;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace AnalisadorDados.API.Controllers
@@ -7,21 +10,33 @@ namespace AnalisadorDados.API.Controllers
     public class EstatisticasUsuariosController : ControllerBase
     {
         private readonly ILogger<EstatisticasUsuariosController> _logger;
+        private readonly IUsuarioCRUD _usuarioCrud;
+        
 
-        public EstatisticasUsuariosController(ILogger<EstatisticasUsuariosController> logger)
+        public EstatisticasUsuariosController(ILogger<EstatisticasUsuariosController> logger, IUsuarioCRUD usuarioCrud)
         {
             _logger = logger;
+            _usuarioCrud = usuarioCrud;
         }
 
         [HttpGet]
         [Route("/superusers")]
-        public async Task<IActionResult> SuperUsuarios()
+        public IActionResult SuperUsuarios()
         {
             // Filtro: score >= 900 e active = true
             // Retorna os dados e o tempo de processamento da requisição em ms.
             // Retornar timestamp da requisição
             
-            return Ok("Esse aqui tá ok");
+            var superUsers = _usuarioCrud.RetornaSuperUser().ToList();
+
+            var times = _usuarioCrud.RetornarTimes().ToList();
+
+            var retornoUsuario = UsuarioCriacaoDto.ToDto(superUsers);
+            
+            var retorno = new UsuarioRetornoSuperUsers(DateTime.Now,  retornoUsuario);
+            
+            return Ok(retorno);
+            
         }
         
         [HttpGet]
@@ -56,5 +71,7 @@ namespace AnalisadorDados.API.Controllers
             
             return Ok("Esse aqui tá ok");
         }
+        
+        
     }
 }

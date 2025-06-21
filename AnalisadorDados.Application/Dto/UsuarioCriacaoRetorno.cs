@@ -1,6 +1,4 @@
-using System.Text.Json.Serialization;
-
-namespace AnalisadorDados.API.Dto;
+namespace AnalisadorDados.Application.Dto;
 
 public record UsuarioCriacaoRetorno(
      [property: JsonPropertyName("message")] string Message,

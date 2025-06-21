@@ -22,11 +22,11 @@ public class UserEntity
         
     [Column("contry", TypeName = "varchar(20)")]
     public string Country {get; set;}
-    
-    [Column("team")]    
-    public TeamEntity TeamEntity {get; set;}
+
+    [Column("team")] 
+    public TeamEntity? Team { get; init; } = new();
 
     [Column("logs")] 
-    public ICollection<LogEntity> Logs { get; set; } = new List<LogEntity>();
+    public ICollection<LogEntity>? Logs { get; init; } = new List<LogEntity>();
 
 }

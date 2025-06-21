@@ -20,6 +20,14 @@ public class ProjectDto
         }).ToList();
     }
     
+    public static IEnumerable<ProjectDto> ToDto(IEnumerable<ProjectEntity> entities)
+    {
+        return entities.Select(entity => new ProjectDto(
+            entity.Name,
+            entity.Completed
+        )).ToList();
+    }
+    
     [JsonPropertyName("name")] public string Name { get; }
 
     [JsonPropertyName("completed")] public bool Completed { get; }
